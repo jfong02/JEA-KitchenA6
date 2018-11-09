@@ -29,6 +29,14 @@ $(document).ready( function() {
       $(this).hide();
     });
 
+    $('#clear-kitchen').click(function() {
+      $('#kitchen-panel-list').empty();
+      $('#empty-message').show();
+    });
+
+    $('#find-recipes-button').click(function() {
+      window.location = "recipes.html"; // Go to recipes page
+    });
 
 });
 

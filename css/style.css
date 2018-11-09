@@ -185,9 +185,22 @@ header.masthead p {
 
 
 /* KITCHEN SPECIFIC STYLING */
+.kitchen-button {
+	cursor:pointer;
+	margin:30px;
+	padding:5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size:30px;
+}
+
 #empty-message {
 	font-size:30px;
 	padding:20px;
+}
+
+#clear-kitchen {
+	background: #ccc;
 }
 
 .item-button {
@@ -202,12 +215,6 @@ header.masthead p {
 	list-style-type: none;
 }
 
-#find-recipes-button {
-	padding:5px;
-	padding-left: 20px;
-	padding-right: 20px;
-	font-size:25px;
-}
 #find-recipes-button:hover {
 	background: coral;
 }
