@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JEA's Kitchen [App Name TBD]</title>
+
+	<!-- Bootstrap Framework, icons, and animate -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="animate.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./js/homepage.js"></script>
+</head>
+
+<body id="page-top">
+
+	<!-- Navbar -->
+	<div id="mainnav" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a class="nav-item active" href="./index.html"><i class="fa fa-2x fa-home sr-icons"></i>Home</a>
+		<a class="nav-item" href="./kitchen.html"><i class="fa fa-2x fa-cutlery sr-icons"></i>My Kitchen</a>
+		<a class="nav-item" href="./recipes.html"><i class="fa fa-2x fa-book sr-icons"></i>Recipes Lookup</a>
+		<a class="nav-item" href="./favorites.html"><i class="fa fa-2x fa-bookmark sr-icons"></i>Favorites</a>
+	</div>
+	<div id="main">
+		<button id="opensidebar" class="openbtn" onclick="openNav()">&#9776;</button>
+		<button id="closesidebar" class="openbtn" onclick="closeNav()" style="display:none">&times;</button>
+	</div>
+	
+
+	<header class="masthead">
+		<div class="container mx-auto">
+			<div class="row" style="padding-top:50px">
+			<div class="col-lg-10 text-center mx-auto">
+				<h1 class="text-uppercase">
+					<strong href="./index.html">MealTime</strong>
+					<hr style="max-width: 80%">
+				</h1>
+			</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="Homepage-nav-btns">
+		<div class="container">
+			<div class="row">
+				<button class="btn-link homepage-item">
+					<a class="homepage-item-content" href="./kitchen.html">
+						<i class="fa fa-2x fa-cutlery sr-icons"></i>
+						My Kitchen
+					</a>
+				</button>
+			</div>
+			<div class="row">
+				<span>&nbsp</span>
+			</div>
+			<div class="row">
+				<button class="btn-link homepage-item">
+					<a class="homepage-item-content" href="./recipes.html">
+						<i class="fa fa-2x fa-book sr-icons"></i>
+						Find Recipes
+					</a>
+				</button>
+			</div>
+			<div class="row">
+				<span>&nbsp</span>
+			</div>
+			<div class="row">
+				<button class="btn-link homepage-item">
+					<a class="homepage-item-content" href="./favorites.html">
+						<i class="fa fa-2x fa-bookmark sr-icons"></i>
+						Recents/Favorites
+					</a>
+				</button>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
