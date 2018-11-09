@@ -30,7 +30,7 @@
 		<button id="closesidebar" class="openbtn" onclick="closeNav()" style="display:none">&times;</button>
 	</div>
 
-  	<p>No Favorites Listed!</p>
+  	<!-- <p>No Favorites Listed!</p> -->
 
 	<div id="templatedfavorites">
 		<!-- inject templated html code here -->
@@ -40,11 +40,8 @@
 	<script id="favoritetemplate" type="text/x-handlebars-template">
 		<div class="container">
 			<div class="row" id="favorite{{index}}">
-				<div class="col-3">
-					<p>{{name}}</p>
-				</div>
-				<div class="col-12">
-					<p>RECIPE IMAGE AND OTHER STUFF?</p>
+				<div class="col-6 recipe-box">
+					<a href={{href}}>{{name}}<img src="images/Chicken-Kale-Detox-Soup.jpg" alt="Soup image"></a>
 				</div>
 			</div>
 		</div>

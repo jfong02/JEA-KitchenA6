@@ -32,8 +32,8 @@
 	<center>
 	<img src="./images/Chicken-Kale-Detox-Soup.jpg"/>
 		<p> <b> <font size="+3">Chicken Kale Soup</font></b>
-		<button id="addin" class="add-ingredient button kitchen-button" onclick="toggleadd()">Add to Favorites!</button>
-		<button id="addout" class="add-ingredient button kitchen-button" onclick="toggleadd()" style="display:none">Added! *</button>
+		<button id="addin" class="add-ingredient button kitchen-button" onclick="toggleadd(); store();">Add to Favorites!</button>
+		<button id="addout" class="add-ingredient button kitchen-button" onclick="toggleadd(); remove();" style="display:none">Added! *</button>
 	</center>
 	<p><b>Ingredients </b></p>
 	<p>Kale, ???, ???, ???</p>
@@ -48,5 +48,17 @@
 <img border="0" alt="Kale Image" src="images/kale-chips.jpg" width="300" height="300"> </a>
 <a href="./cranberry_kale_salad_recipe.html">
 <img border="0" alt="Kale Image" src="images/Cranberry-Kale-Salad.jpg" width="300" height="300"> </a>
+
+<script>
+	function store() {
+		var favorite = localStorage.getItem('allrecipes',recipes[1]);
+		localStorage.setItem('favoritedrecipes',JSON.stringify(favorite));
+	}
+
+	function remove() {
+		// localStorage.removeItem('favoritedrecipes');
+	}
+</script>
+
 </body>
 </html>
