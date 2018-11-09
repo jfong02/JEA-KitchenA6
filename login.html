@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mealtime Login</title>
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/login-style.css">
+
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./js/login.js"></script>
+</head>
+<body>
+	<section id="login-box">
+		<h1>Welcome to Mealtime</h1>
+		<h3>Login To Your Account</h3>
+		<p id="invalid-message">Please enter a valid username &amp; password.</p>
+		<form class="login-form" autocomplete="on">
+			<div>
+				<label>Username: </label> <br />
+				<input type="text" id="username" placeholder="Username"></input>
+			</div>
+			<div>
+				<label>Password: </label> <br />
+				<input type="password" id="password" placeholder="Password"></input>
+			</div>
+
+			<button id="submit-button">Log In</button>
+		</form>
+	</section>
+</body>
+</html>

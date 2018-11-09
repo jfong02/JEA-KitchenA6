@@ -1,0 +1,51 @@
+* {
+  font-family: 'Tahoma';
+  color:#a6d31d;
+
+}
+
+body {
+  background:#ffcb3d;
+}
+
+#login-box {
+
+  background: white;
+  width:50%;
+  margin:auto;
+  padding: 50px;
+  overflow:hidden;
+}
+
+input {
+    outline: none;
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#submit-button:hover {
+  background:coral;
+}
+
+#submit-button {
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  background-color:#a6d31d;
+  color:#fff;
+  padding: 8px;
+  border: 0;
+  box-shadow: none;
+}
+
+#invalid-message{
+  color: red;
+  display:none;
+}
