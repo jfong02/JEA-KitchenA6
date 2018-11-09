@@ -193,9 +193,14 @@ header.masthead p {
 	padding-right: 20px;
 	font-size:30px;
 }
+
 #empty-message {
 	font-size:30px;
 	padding:20px;
+}
+
+#clear-kitchen {
+	background: #ccc;
 }
 
 .item-button {
