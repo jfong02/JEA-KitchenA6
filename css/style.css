@@ -97,7 +97,7 @@ header.masthead p {
 	background-color: rgb(7, 83, 0);
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 60px; /* Place content 60px from the top */
-	transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+	transition: 0.3s; /* 0.3 second transition effect to slide in the sidebar */
 }
 
 .sidebar a {
@@ -106,7 +106,7 @@ header.masthead p {
 	font-size: 25px;
 	color: #f1f1f1;
 	display: block;
-	transition: 0.3s;
+	transition: 0.15s;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -139,7 +139,7 @@ header.masthead p {
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-	transition: margin-left .5s; /* If you want a transition effect */
+	transition: margin-left .3s; /* If you want a transition effect */
 	padding: 20px;
 }
 
@@ -148,7 +148,6 @@ header.masthead p {
 	.sidebar {padding-top: 15px;}
 	.sidebar a {font-size: 18px;}
 }
-
 
 
 .homepage-item {
@@ -204,14 +203,20 @@ header.masthead p {
 }
 
 #find-recipes-button {
-	padding:20px;
+	padding:5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size:25px;
 }
 #find-recipes-button:hover {
 	background: coral;
 }
-#add-ingredient {
+.add-ingredient {
 	background: #ffcb3d;
-	padding:20px;
+	padding:5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size:30px;
 }
 
 #searchform {
