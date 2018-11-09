@@ -252,9 +252,9 @@ header.masthead p {
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
+  font-size: 30px;
+  padding: 20px 20px 20px 40px;
+  border: 2px solid #ddd;
   margin-bottom: 12px;
 }
 
