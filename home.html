@@ -15,7 +15,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./js/homepage.js"></script>
 </head>
-<body>
+
+<body id="page-top">
+
 	<!-- Navbar -->
 	<div id="mainnav" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -28,23 +30,54 @@
 		<button id="opensidebar" class="openbtn" onclick="openNav()">&#9776;</button>
 		<button id="closesidebar" class="openbtn" onclick="closeNav()" style="display:none">&times;</button>
 	</div>
+	
 
-	<center>
-	<img src="./images/Chicken-Kale-Detox-Soup.jpg"/>
-	<p> <b>Chicken & Kale Soup</b> <button class="button">Add to favorites</button> </p>
-	</center>
-	<p><b>Ingredients </b></p>
-	<p>Kale, ???, ???, ???</p>
-	<p> <b>Step 1 </b></p>
-	<p>. . .</p>
-	<p> <b>Step 2 </b></p>
-	<p>. . .</p>
-	<p><b> Related Recipes</b><p>
-		<a href="./kale_pesto_recipe.html">
-<img border="0" alt="Kale Image" src="images/kale-pesto.jpg" width="300" height="300"> </a>
-<a href="./kale_chips_recipe.html">
-<img border="0" alt="Kale Image" src="images/kale-chips.jpg" width="300" height="300"> </a>
-<a href="./cranberry_kale_salad_recipe.html">
-<img border="0" alt="Kale Image" src="images/Cranberry-Kale-Salad.jpg" width="300" height="300"> </a>
+	<header class="masthead">
+		<div class="container mx-auto">
+			<div class="row" style="padding-top:50px">
+			<div class="col-lg-10 text-center mx-auto">
+				<h1 class="text-uppercase">
+					<strong href="./index.html">MealTime</strong>
+					<hr style="max-width: 80%">
+				</h1>
+			</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="Homepage-nav-btns">
+		<div class="container">
+			<div class="row">
+				<button class="btn-link homepage-item">
+					<a class="homepage-item-content" href="./kitchen.html">
+						<i class="fa fa-2x fa-cutlery sr-icons"></i>
+						My Kitchen
+					</a>
+				</button>
+			</div>
+			<div class="row">
+				<span>&nbsp</span>
+			</div>
+			<div class="row">
+				<button class="btn-link homepage-item">
+					<a class="homepage-item-content" href="./recipes.html">
+						<i class="fa fa-2x fa-book sr-icons"></i>
+						Find Recipes
+					</a>
+				</button>
+			</div>
+			<div class="row">
+				<span>&nbsp</span>
+			</div>
+			<div class="row">
+				<button class="btn-link homepage-item">
+					<a class="homepage-item-content" href="./favorites.html">
+						<i class="fa fa-2x fa-bookmark sr-icons"></i>
+						Recents/Favorites
+					</a>
+				</button>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
