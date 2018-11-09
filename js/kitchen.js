@@ -21,13 +21,10 @@ $(document).ready( function() {
       var li = $("<li><button></button></li>");
       $('ul#kitchen-panel-list').append(li);
 
-      $("button",li).text($(this).text()).addClass("item-button");
+      $("button", li).text($(this).text()).addClass("item-button");
       $("#userInput").val("");
     });
 
-    $('button.item-button').click(function() {
-      $(this).hide();
-    });
 
     $('#clear-kitchen').click(function() {
       $('#kitchen-panel-list').empty();
