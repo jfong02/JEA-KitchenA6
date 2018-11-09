@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cranberry Kale Salad</title>
+	<title>Kale Chips Recipe</title>
 	<!-- Bootstrap Framework, icons, and animate -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -28,9 +28,11 @@
 		<button id="closesidebar" class="openbtn" onclick="closeNav()" style="display:none">&times;</button>
 	</div>
 
-	<center>
+  <center>
 	<img src="./images/kale-chips.jpg"/>
-		<p> <b>Kale Chips</b>   <button class="button">Add to favorites</button> </p>
+		<p> <b> <font size="+3">Kale Chips</font></b>
+    <button id="addin" class="add-ingredient button kitchen-button" onclick="toggleadd()">Add to Favorites!</button>
+    <button id="addout" class="add-ingredient button kitchen-button" onclick="toggleadd()" style="display:none">Added! *</button>
 </center>
 <p><b>Ingredients </b></p>
 <p>Kale, ???, ???, ???</p>
