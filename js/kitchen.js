@@ -19,6 +19,7 @@ $(document).ready( function() {
       $('ul#kitchen-panel-list').append(li);
 
       $("button",li).text($(this).text()).addClass("item-button");
+      $("#userInput").val("");
     });
 
     $('button.item-button').click(function() {
