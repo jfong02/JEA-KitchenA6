@@ -34,6 +34,9 @@ $(document).ready( function() {
       $('#empty-message').show();
     });
 
+    $('#find-recipes-button').click(function() {
+      window.location = "recipes.html"; // Go to recipes page
+    });
 
 });
 
