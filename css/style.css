@@ -207,7 +207,8 @@ header.masthead p {
 }
 
 .item-button {
-	background:coral;
+	cursor:pointer;
+	background:orange;
 	padding:20px;
 	margin:10px;
 	border: 0;
