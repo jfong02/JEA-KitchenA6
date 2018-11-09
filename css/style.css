@@ -94,7 +94,7 @@ header.masthead p {
 	z-index: 1; /* Stay on top */
 	top: 0;
 	left: 0;
-	background-color: #a6d31d;
+	background-color: rgb(7, 83, 0);
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 60px; /* Place content 60px from the top */
 	transition: 0.3s; /* 0.3 second transition effect to slide in the sidebar */
@@ -178,7 +178,7 @@ header.masthead p {
 
 .button {
 	font-size: 15px;
-	background-color:#a6d31d;
+	background-color:rgb(31, 179, 18);
 	color:#000;
 	border:none;
 }
