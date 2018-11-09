@@ -42,7 +42,7 @@ localStorage.setItem('favoritedrecipes',JSON.stringify(dummy));
 localStorage.setItem('favoritedrecipes',JSON.stringify(favorited));
 var fav = localStorage.getItem('favoritedrecipes',favorited);
 if (fav) {
-    var source = document.getElementById("recipetemplate").innerHTML;
+    var source = document.getElementById("favoritetemplate").innerHTML;
     var template = Handlebars.compile(source);
     var parent = $("#templatedfavorites");
 
