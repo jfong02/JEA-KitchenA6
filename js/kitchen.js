@@ -29,6 +29,11 @@ $(document).ready( function() {
       $(this).hide();
     });
 
+    $('#clear-kitchen').click(function() {
+      $('#kitchen-panel-list').empty();
+      $('#empty-message').show();
+    });
+
 
 });
 
