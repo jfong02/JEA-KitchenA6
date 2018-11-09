@@ -14,7 +14,7 @@
 
 <!-- JQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./js/recipes.js"></script>
+
 </head>
 <body>
 
@@ -44,8 +44,8 @@
 			<hr style="max-width:80%">
 		</div>
 	</header>
-	<section id="Homepage-nav-btns">
-		<div class="container">
+	<section id="recipelist">
+		<div class="container" id="recipedeposit">
 			<div class="row">
 				<div class="col-6 recipe-box">
 					<a href="./chicken_kale_soup_recipe.html">Chicken and Kale soup
@@ -99,6 +99,18 @@
 		</div>
 	</section>
 
+	<script id="recipetemplate" type="text/x-handlebars-template">
+	<div class="row" id="recipe{{index}}">
+			<div class="col-6 recipe-box">
+				<a href={{href}}>{{name}}<img src="images/Chicken-Kale-Detox-Soup.jpg" alt="Soup image"></a>
+			</div>
+		</div>
+	</script>
 
 </body>
 </html>
+
+<!-- Handlebars -->
+<script src="./js/handlebars-v4.0.11.js"></script>
+<!-- Custom JS -->
+<script src="./js/recipes.js"></script>
