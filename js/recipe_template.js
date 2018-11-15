@@ -1,5 +1,5 @@
 var recipePageData = [
- 	{  'title': 'Chicken Kale Soup', 
+ 	{  'title': 'Chicken and Kale Soup', 
  	   'image':'./images/Chicken-Kale-Detox-Soup.jpg',
 	   'ingredients': ['1 tablespoon extra virgin olive oil', 
 	                   '1 large white onion, diced',
