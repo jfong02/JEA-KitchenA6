@@ -23,7 +23,7 @@
 		<a class="nav-item" href="./kitchen.html"><i class="fa fa-2x fa-cutlery sr-icons"></i>My Kitchen</a>
 		<a class="nav-item" href="./recipes.html"><i class="fa fa-2x fa-book sr-icons"></i>Recipes Lookup</a>
 		<a class="nav-item" href="./favorites.html"><i class="fa fa-2x fa-bookmark sr-icons"></i>Favorites</a>
-		<a class="nav-item" href="./index.html">Log Out</a>
+		<a class="nav-item" href="./index.html"><i class="fa fa-2x fa-sign-out sr-icons"></i>Log Out</a>
 	</div>
 	<div id="main">
 		<button id="opensidebar" class="openbtn" onclick="openNav()">&#9776;</button>
@@ -34,7 +34,7 @@
 	<img src="./images/Chicken-Kale-Detox-Soup.jpg"/>
 		<p> <b> <font size="+3">Chicken Kale Soup</font></b>
 		<button id="addin" class="add-ingredient button kitchen-button" onclick="toggleadd(); store();">Add to Favorites!</button>
-		<button id="addout" class="add-ingredient button kitchen-button" onclick="toggleadd(); remove();" style="display:none">Added! *</button>
+		<button id="addout" class="add-ingredient button kitchen-button" onclick="toggleadd(); remove();" style="display:none">Added! *Click here to REMOVE*</button>
 	</center>
 	<p><b>Ingredients </b></p>
 	<p>Kale, ???, ???, ???</p>
@@ -51,14 +51,62 @@
 <img border="0" alt="Kale Image" src="images/Cranberry-Kale-Salad.jpg" width="300" height="300"> </a>
 
 <script>
+	// put these functions and scripts into recipe_template.js to have favoriting functionality
 	function store() {
-		var favorite = localStorage.getItem('allrecipes',recipes[1]);
-		localStorage.setItem('favoritedrecipes',JSON.stringify(favorite));
+		var allrecipes = JSON.parse(localStorage.getItem("allrecipes"));
+		var favoritestuff = JSON.parse(localStorage.getItem('favoritedrecipes'));
+        var newfav = [];
+        if (favoritestuff) {
+            for (i=0; i < favoritestuff.length; i++) {
+				newfav.push(favoritestuff[i]);
+				console.log(favoritestuff[i]);
+            }
+        }
+        console.log(newfav);
+
+		if (allrecipes) {
+            for (i=0; i < allrecipes.length; i++) {
+				if (allrecipes[i].name=='Chicken and Kale Soup') {
+					var push=allrecipes[0];
+					newfav.push(push);
+					console.log('found matching recipe to favorite');
+				}
+            }
+        }
+
+        // push data to local storage
+        console.log(newfav);
+        localStorage.setItem('favoritedrecipes',JSON.stringify(newfav));
 	}
 
 	function remove() {
-		// localStorage.removeItem('favoritedrecipes');
+		var favoritestuff = JSON.parse(localStorage.getItem('favoritedrecipes'));
+		var newfav = [];
+        if (favoritestuff) {
+            for (i=0; i < favoritestuff.length; i++) {
+				if (favoritestuff[i].name !='Chicken and Kale Soup') {
+					newfav.push(favoritestuff[i]);
+					console.log(favoritestuff[i]);
+				}
+            }
+		}
+		console.log(newfav);
+        localStorage.setItem('favoritedrecipes',JSON.stringify(newfav));
 	}
+
+	var checkfav = JSON.parse(localStorage.getItem('favoritedrecipes'));
+	if (checkfav) {
+		$('#addin').show();
+		$('#addout').hide();
+		for (i=0; i < checkfav.length; i++) {
+			if (checkfav[i].name =='Chicken and Kale Soup') {
+				$('#addin').hide();
+				$('#addout').show();
+			}
+		}
+	}
+
+
 </script>
 
 </body>

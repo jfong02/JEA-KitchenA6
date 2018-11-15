@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-    
+
 });
 
 
@@ -23,11 +23,11 @@ function closeNav() {
 
 // RECIPE STORAGE TO LOCALSTORAGE
 var recipes = [
-    {'name': 'Chicken and Kale Soup','index': '1', 'href':'./chicken_kale_soup_recipe.html'},
-    {'name': 'Cranberry Kale Salad','index': '2', 'href':'./cranberry_kale_salad_recipe.html'},
-    {'name': 'Chinese Style Kale','index': '3', 'href':'./chinese_style_kale_recipe.html'},
-    {'name': 'Kale Chips','index': '4', 'href':'./kale_chips_recipe.html'},
-    {'name': 'Kale Pesto','index': '5', 'href':'./kale_pesto_recipe.html'},
+    {'name': 'Chicken and Kale Soup','index': '1', 'href':'./chicken_kale_soup_recipe.html', 'img':'./Chicken-Kale-Detox-Soup.jpg'},
+    {'name': 'Cranberry Kale Salad','index': '2', 'href':'./cranberry_kale_salad_recipe.html','img':'./Cranberry-Kale-Salad.jpg'},
+    {'name': 'Chinese Style Kale','index': '3', 'href':'./chinese_style_kale_recipe.html','img':'./Chinese-Style-Kale.jpg'},
+    {'name': 'Kale Chips','index': '4', 'href':'./kale_chips_recipe.html','img':'./kale-chips.jpg'},
+    {'name': 'Kale Pesto','index': '5', 'href':'./kale_pesto_recipe.html','img':'./kale-pesto.jpg'},
 ]
 
 localStorage.setItem('allrecipes',JSON.stringify(recipes));
@@ -45,9 +45,15 @@ var ingredsource = document.getElementById("ingredientstemplate").innerHTML;
 var ingredtemplate = Handlebars.compile(ingredsource);
 var ingredientslist = $("#ingredientslist");
 var localitemref = JSON.parse(localStorage.getItem("kitchen"));
-
-for (var i = 0; i<localitemref.length; i++) {
-    var ingredients = localitemref[i];
-    var stuff = ingredtemplate(ingredients);
-    ingredientslist.append(stuff);
+if (localitemref) {
+    for (var i = 0; i<localitemref.length; i++) {
+        var ingredients = localitemref[i];
+        var stuff = ingredtemplate(ingredients);
+        ingredientslist.append(stuff);
+    }
 }
+
+
+$('#ingredientslist').click(function() {
+    window.location = "./kitchen.html"; // Go to kitchen page
+  });
