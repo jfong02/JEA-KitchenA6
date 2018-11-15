@@ -1,5 +1,5 @@
 var recipePageData = [
- 	{'title': 'Chicken Kale Soup', 
+ 	{  'title': 'Chicken Kale Soup', 
  	   'image':'./images/Chicken-Kale-Detox-Soup.jpg',
 	   'ingredients': ['1 tablespoon extra virgin olive oil', 
 	                   '1 large white onion, diced',
@@ -138,3 +138,63 @@ function closeNav() {
     $("#opensidebar").show();
     $("#closesidebar").hide();
 }
+
+	// put these functions and scripts into recipe_template.js to have favoriting functionality
+	function store() {
+		var allrecipes = JSON.parse(localStorage.getItem("allrecipes"));
+		var favoritestuff = JSON.parse(localStorage.getItem('favoritedrecipes'));
+        var newfav = [];
+        if (favoritestuff) {
+            for (i=0; i < favoritestuff.length; i++) {
+				newfav.push(favoritestuff[i]);
+				console.log(favoritestuff[i]);
+            }
+        }
+        console.log(newfav);
+
+		if (allrecipes) {
+            for (i=0; i < allrecipes.length; i++) {
+				if (allrecipes[i].name=='Chicken and Kale Soup') {
+					var push=allrecipes[0];
+					newfav.push(push);
+					console.log('found matching recipe to favorite');
+				}
+            }
+        }
+
+        // push data to local storage
+        console.log(newfav);
+        localStorage.setItem('favoritedrecipes',JSON.stringify(newfav));
+	}
+
+	function remove() {
+		var favoritestuff = JSON.parse(localStorage.getItem('favoritedrecipes'));
+		var newfav = [];
+        if (favoritestuff) {
+            for (i=0; i < favoritestuff.length; i++) {
+				if (favoritestuff[i].name !='Chicken and Kale Soup') {
+					newfav.push(favoritestuff[i]);
+					console.log(favoritestuff[i]);
+				}
+            }
+		}
+		console.log(newfav);
+        localStorage.setItem('favoritedrecipes',JSON.stringify(newfav));
+	}
+
+	var checkfav = JSON.parse(localStorage.getItem('favoritedrecipes'));
+	if (checkfav) {
+		$('#addin').show();
+		$('#addout').hide();
+		for (i=0; i < checkfav.length; i++) {
+			if (checkfav[i].name =='Chicken and Kale Soup') {
+				$('#addin').hide();
+				$('#addout').show();
+			}
+		}
+	}
+
+	function toggleadd() {
+	    $("#addin").toggle();
+	    $("#addout").toggle();
+	}
