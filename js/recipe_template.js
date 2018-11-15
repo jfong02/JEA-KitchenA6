@@ -178,6 +178,8 @@ function closeNav() {
 				}
             }
 		}
+		if (newfav.length<1)
+			newfav = null;
 		console.log(newfav);
         localStorage.setItem('favoritedrecipes',JSON.stringify(newfav));
 	}
