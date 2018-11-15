@@ -45,9 +45,15 @@ var ingredsource = document.getElementById("ingredientstemplate").innerHTML;
 var ingredtemplate = Handlebars.compile(ingredsource);
 var ingredientslist = $("#ingredientslist");
 var localitemref = JSON.parse(localStorage.getItem("kitchen"));
-
-for (var i = 0; i<localitemref.length; i++) {
-    var ingredients = localitemref[i];
-    var stuff = ingredtemplate(ingredients);
-    ingredientslist.append(stuff);
+if (localitemref) {
+    for (var i = 0; i<localitemref.length; i++) {
+        var ingredients = localitemref[i];
+        var stuff = ingredtemplate(ingredients);
+        ingredientslist.append(stuff);
+    }
 }
+
+
+$('#ingredientslist').click(function() {
+    window.location = "./kitchen.html"; // Go to kitchen page
+  });

@@ -24,7 +24,7 @@ $(document).ready( function() {
         $('ul#kitchen-panel-list').append(li);
         $("button", li).text($(this).text()).addClass("item-button");
         $("#userInput").val("");
-        // $("button", li).unwrap();
+        $("button", li).unwrap();
 
         // // // // // VERSION 1 USING SLIGHTLY MESSED UP URLSEARCHPARAMS------------------
 
@@ -67,7 +67,8 @@ $(document).ready( function() {
         }
         console.log(kitchenobject);
         
-        newingredientname = ("ingredient",li.html().substring(li.html().indexOf('>')+1,li.html().lastIndexOf('<')));
+        newingredientname = $(this).text();
+        console.log($(this).text());
         var push={'inv': newingredientname,'index': kitchenobject.length};
         kitchenobject.push(push);
         console.log(push);
@@ -84,6 +85,8 @@ $(document).ready( function() {
     if (localitems != null) {
         for (i=0; i < localitems.length; i++) {
             kitchenobjects.push(localitems[i]);
+            console.log('kitchenobjects:');
+            console.log(kitchenobjects);
         }
         console.log(kitchenobjects);
         $('#empty-message').hide();

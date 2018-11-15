@@ -21,6 +21,10 @@ function closeNav() {
     $("#closesidebar").hide();
 }
 
+function emptymessage() {
+    $('#emptymessage').toggle();
+}
+
 var favorited = [
     {'name': 'chicken_kale_soup_recipe','index': '1'},
     {'name': 'cranberry_kale_salad_recipe','index': '2'}
@@ -38,19 +42,20 @@ var dummy = {'name': 'Recipe Name','index': '#'}
 //     var curhtml = template(curdata);
 //     parent.append(curhtml);
 // }
-localStorage.setItem('favoritedrecipes',JSON.stringify(dummy));
-localStorage.setItem('favoritedrecipes',JSON.stringify(favorited));
-var fav = localStorage.getItem('favoritedrecipes',favorited);
+var fav = JSON.parse(localStorage.getItem('favoritedrecipes'));
 if (fav) {
     var source = document.getElementById("favoritetemplate").innerHTML;
     var template = Handlebars.compile(source);
     var parent = $("#templatedfavorites");
 
-    var html = template(dummy)
-    for (var i = 0; i<favorited.length; i++) {
-        var curdata = favorited[i];
-        console.log(favorited[i]);
+    for (var i = 0; i<fav.length; i++) {
+        var curdata = fav[i];
+        console.log(fav[i]);
         var curhtml = template(curdata);
         parent.append(curhtml);
     }
+}
+else {
+    emptymessage();
+    console.log('hide empty message');
 }

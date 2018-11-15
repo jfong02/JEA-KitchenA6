@@ -33,24 +33,27 @@
 		<button id="closesidebar" class="openbtn" onclick="closeNav()" style="display:none">&times;</button>
 	</div>
 
-	<header class="recipe_heading">
+	<header class="recipe_heading masthead">
 		<div class="container mx-auto">
 			<div class="row" style="padding-top:50px">
-				<div class="col-lg-10 mx-auto">
-					<h1 class="text-uppercase">
-						<strong>Search Results</strong>
-					</h1>
-				</div>
+			<div class="col-lg-10 text-center mx-auto">
+				<h1 class="text-uppercase text-center">
+					<strong>Recipe Lookup</strong>
+					<hr style="max-width: 80%">
+				</h1>
 			</div>
-			<hr style="max-width:80%">
-			<div class="row">
-				<h2>Ingredients from Kitchen:</h2>
-			</div>
-			<div class="row" id="ingredientslist">
-				<!-- template goes here -->
 			</div>
 		</div>
 	</header>
+	<div class="container">
+		<div class="row">
+			<h2>Ingredients from Kitchen:</h2>
+		</div>
+		<div class="row" id="ingredientslist" href="./kitchen.html" style="background: #FFF6E4;">
+			<!-- template goes here -->
+		</div>
+	</div>
+			
 	<section id="recipelist">
 		<div class="container" id="recipedeposit">
 			<!-- template goes here -->
@@ -67,7 +70,7 @@
 
 	<script id="ingredientstemplate" type="text/x-handlebars-template">
 	<div class="col-2" id="ingredient{{index}}">
-		<p class="item-button text-center" href="./kitchen.html" style="margin:5px; ">{{inv}}</p>
+		<p class="recipe-ingredient text-center" href="./kitchen.html" style="margin:5px; ">{{inv}}</p>
 	</div>
 	</script>
 
