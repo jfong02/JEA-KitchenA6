@@ -238,6 +238,7 @@ header.masthead p {
 	width:100%;
 	height:80%;
 	background: #FFF6E4;
+	border-radius:25px;
 }
 
 .kitchen-container {
