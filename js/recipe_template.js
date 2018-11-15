@@ -1,5 +1,6 @@
 var recipePageData = [
  	{'title': 'Chicken Kale Soup', 
+ 	   'image':'./images/Chicken-Kale-Detox-Soup.jpg',
 	   'ingredients': ['1 tablespoon extra virgin olive oil', 
 	                   '1 large white onion, diced',
 	                   '4 cloves garlic, crushed',
@@ -29,6 +30,7 @@ var recipePageData = [
 	    'index': 0
     },
  	{'title': 'Kale Pesto', 
+ 	   'image':'./images/kale-pesto.jpg',
 	   'ingredients': ['2 to 3 cloves garlic', 
 	                   '3 cups packed kale',
 	                   '3/4 cup hemp seeds or toasted walnuts or pecans',
@@ -48,6 +50,7 @@ var recipePageData = [
 	    'index': 1
     },
  	{'title': 'Chinese Style Kale', 
+ 	   'image':'./images/Chinese-Style-Kale.jpg',
 	   'ingredients': ['1 tbsp vegetable oil', 
 	                   '1 large garlic clove, sliced',
 	                   '200g bag kale',
@@ -66,6 +69,7 @@ var recipePageData = [
 	    'index': 2
     },
  	{'title': 'Cranberry Kale Salad', 
+ 	    'image':'./images/Cranberry-Kale-Salad.jpg',
 		'ingredients': ['3 tbsp olive oil, divided',
 				  '1 shallot, peeled and thinly sliced',
 				  '3 cloves garlic, coarsely chopped',
@@ -106,8 +110,7 @@ $(document).ready(function() {
   var recipeTitle = queryParams.get('recipe');
   console.log('query for', recipeTitle);
 
-  // to get this to work like in class, comment out the "STEP 1" parts
-  // above between BEGIN and END.
+
   for (var i = 0; i < recipePageData.length; i++) {
     var curData = recipePageData[i];
     if (curData.title == recipeTitle) {
