@@ -17,7 +17,7 @@ var recipePageData = [
 				  'Add in carrots and celery. Sautè for five minutes, until onion is translucent.',
 				  'Pat chicken dry and season generously with salt and pepper.',
 				  'Once onion is translucent, add in chicken and sautè until chicken is opaque and fully cooked through. Should take about 8-10 minutes. Stir occasionally.',
-				  'Pour in chicken stock and season with salt, pepper, ginger and lemon juice if using.'
+				  'Pour in chicken stock and season with salt, pepper, ginger and lemon juice if using.',
 				  'Add in kale.',
 				  'Bring to a boil over high heat. Turn heat down to low and let simmer for 15 minutes. Taste and adjust seasoning as desired.'
 				 ],
@@ -99,21 +99,18 @@ $(document).ready(function() {
   var source   = $("#recipe-template").html();
   var template = Handlebars.compile(source);
   var parentDiv = $("#templatedRecipe");
- 
-  var html = template(recipePageData[0]);
-  parentDiv.append(html);
 
   // Use the URLSearchParams API to make fake-database queries using a URL
   // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
   var queryParams = new URLSearchParams(window.location.search);
-  var projectTitle = queryParams.get('project');
-  console.log('query for', projectTitle);
+  var recipeTitle = queryParams.get('recipe');
+  console.log('query for', recipeTitle);
 
   // to get this to work like in class, comment out the "STEP 1" parts
   // above between BEGIN and END.
-  for (var i = 0; i < complexData.length; i++) {
-    var curData = complexData[i];
-    if (curData.title == projectTitle) {
+  for (var i = 0; i < recipePageData.length; i++) {
+    var curData = recipePageData[i];
+    if (curData.title == recipeTitle) {
       var curHtml = template(curData);
       parentDiv.append(curHtml);
     }
