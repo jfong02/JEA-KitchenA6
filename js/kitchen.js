@@ -97,6 +97,38 @@ $(document).ready( function() {
             console.log(li);
         }
     }
+    else {
+        $('#empty-message').show();
+    }
+
+    
+    $('ul#kitchen-panel-list').on("click",'.item-button',function() {
+        console.log("click delete!");
+        var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+        if (localitemref != null) {
+            for (i=0; i < localitemref.length; i++) {
+                if (localitemref[i].name != $(this).text())
+                {
+                    localitemref.splice(i,1);
+                    break;
+                }
+            }
+        }
+        console.log(localitemref);
+        console.log($(this));
+        
+        // remove button from kitchen
+        $(this).hide();
+
+        if (localitemref.length <1) {
+            localitemref = null;
+            $('#empty-message').show();
+        }
+            
+        // push data to local storage
+        localStorage.setItem('kitchen',JSON.stringify(localitemref));
+
+    })
 
 
     $('#clear-kitchen').click(function() {
