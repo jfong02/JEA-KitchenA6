@@ -8,6 +8,8 @@ $(document).ready(function() {
 
         if (validUser === true && validPass === true) { 
             window.location = "home.html"; // Go to homepage
+            var login = ['cse170','cogs120'];
+            localStorage.setItem('login',JSON.stringify(login))
         }
         else {
             // Display error msg

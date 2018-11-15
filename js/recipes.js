@@ -33,10 +33,21 @@ var recipes = [
 localStorage.setItem('allrecipes',JSON.stringify(recipes));
 var source = document.getElementById("recipetemplate").innerHTML;
 var template = Handlebars.compile(source);
-var parent = $("#recipelist");
+var parent = $("#recipedeposit");
 
 for (var i = 0; i<recipes.length; i++) {
     var curdata = recipes[i];
     var curhtml = template(curdata);
     parent.append(curhtml);
+}
+
+var ingredsource = document.getElementById("ingredientstemplate").innerHTML;
+var ingredtemplate = Handlebars.compile(ingredsource);
+var ingredientslist = $("#ingredientslist");
+var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+
+for (var i = 0; i<localitemref.length; i++) {
+    var ingredients = localitemref[i];
+    var stuff = ingredtemplate(ingredients);
+    ingredientslist.append(stuff);
 }
