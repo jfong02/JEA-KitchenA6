@@ -1,7 +1,125 @@
+var recipePageData = [
+ 	{'title': 'Chicken Kale Soup', 
+	   'ingredients': ['1 tablespoon extra virgin olive oil', 
+	                   '1 large white onion, diced',
+	                   '4 cloves garlic, crushed',
+	                   '2 medium carrots, diced',
+	                   '2 stalks celery, diced',
+	                   '1 lb. organic boneless chicken breast, cubed',
+	                   '5 cups organic chicken stock',
+	                   '3-4 handfuls fresh kale, ribs,',
+	                   '1/2 teaspoon sea salt',
+	                   '1/2 teaspoon ground pepper',
+	                   '1 tablespoon parsley, roughly chopped'
+	                  ],
+		'steps': ['In a large pot over medium-low heat, heat oil.',
+				  'Add in onion and garlic and sautè for one minute.',
+				  'Add in carrots and celery. Sautè for five minutes, until onion is translucent.',
+				  'Pat chicken dry and season generously with salt and pepper.',
+				  'Once onion is translucent, add in chicken and sautè until chicken is opaque and fully cooked through. Should take about 8-10 minutes. Stir occasionally.',
+				  'Pour in chicken stock and season with salt, pepper, ginger and lemon juice if using.'
+				  'Add in kale.',
+				  'Bring to a boil over high heat. Turn heat down to low and let simmer for 15 minutes. Taste and adjust seasoning as desired.'
+				 ],
+
+		'relatedRecipesIndex': [1,2,3],
+		'relatedTitle': ['Kale Pesto', 
+		                 'Chinese Style Kale', 
+		                 'Cranberry Kale Salad'],
+	    'index': 0
+    },
+ 	{'title': 'Kale Pesto', 
+	   'ingredients': ['2 to 3 cloves garlic', 
+	                   '3 cups packed kale',
+	                   '3/4 cup hemp seeds or toasted walnuts or pecans',
+	                   '2 tablespoons lemon juice',
+	                   '3/4 teaspoon fine-grain sea salt',
+	                   '3/4 teaspoon ground pepper',
+	                  ],
+		'steps': ['Make the pesto: In a food processor, add the peeled garlic cloves and process until the garlic is minced. Add the kale, hemp seeds, lemon juice, salt and pepper. Turn on the food processor and drizzle in the oil. Process until the pesto reaches your desired consistency, stopping to scrape down the sides as necessary. Taste and add more lemon, salt or pepper if necessary. (You can thin out the pesto with more oil, but if you’re serving with pasta, keep in mind that you can also thin it out with reserved pasta cooking water.)',
+				  'Cook the pasta (optional): Bring a large pot of salted water to boil. Add the pasta and cook until al dente, according to package directions. Reserve one cup cooking liquid before draining the pasta. Let the pasta and pasta water cool for a minute to make sure the high heat doesn’t damage the flax oil pesto.',
+				  'If you intend to have leftovers, transfer the amount of pasta you think you’ll be eating immediately to a serving bowl and mix in pesto with splashes of cooking water. Otherwise, you can mix the pasta and pesto together in your cooking pot, adding splashes of cooking water as necessary. Keep in mind that you have diluted the flavor a bit with the cooking water, so taste and add more lemon, salt or a drizzle of olive oil as necessary.'
+				 ],
+
+		'relatedRecipesIndex': [0,2,3],
+		'relatedTitle': ['Chicken Kale Soup', 
+		                 'Chinese Style Kale', 
+		                 'Cranberry Kale Salad'],
+	    'index': 1
+    },
+ 	{'title': 'Chinese Style Kale', 
+	   'ingredients': ['1 tbsp vegetable oil', 
+	                   '1 large garlic clove, sliced',
+	                   '200g bag kale',
+	                   '1 tbsp soy sauce',
+	                   '1 tbsp oyster sauce'
+	                  ],
+		'steps': ['Heat the oil in a large wok or frying pan, then tip in the garlic and cook for a few secs. Throw in the kale and toss around the pan to coat in the garlicky oil.',
+				  'Pour over 100ml boiling water and cook for 7 mins more until the kale has wilted and is cooked through.',
+				  'Stir in the soy and oyster sauces and heat through to serve.'
+				 ],
+
+		'relatedRecipesIndex': [0,1,3],
+		'relatedTitle': ['Chicken Kale Soup', 
+		                 'Kale Pesto', 
+		                 'Cranberry Kale Salad'],
+	    'index': 2
+    },
+ 	{'title': 'Cranberry Kale Salad', 
+		'ingredients': ['3 tbsp olive oil, divided',
+				  '1 shallot, peeled and thinly sliced',
+				  '3 cloves garlic, coarsely chopped',
+				  '1 cup dried cranberries',
+				  '2 tbsp red wine vinegar',
+				  '2 teaspoons honey',
+				  'juice and zest of half a lemon',
+				  '1/8 tsp salt',
+				  '1/8 tsp ground pepper',
+				  '1 bunch kale, very thinly sliced',
+				  'cup sliced almonds',
+				  '1/4 cup crumbled blue cheese or goat cheese'
+				 ],
+	   'steps': ['Heat 2 Tbsp. oil in a large saute pan over medium-high heat. Add shallot and saute for at least 5 minutes or until tender. Add garlic and saute for 1 minute. Then add cranberries, red wine vinegar, honey and lemon juice and zest, and stir to combine. Season with salt and pepper.', 
+	                   'In a large bowl, toss the kale with olive oil and an extra pinch of salt, and massage kale with your fingers for 1 minute until tender. Add in the cranberry/shallot mixture and almonds, and toss to combine. Serve topped with crumbled cheese if desired.'
+	                  ],
+
+		'relatedRecipesIndex': [0,1,2],
+		'relatedTitle': ['Chicken Kale Soup', 
+		                 'Kale Pesto', 
+		                 'Chinese Style Kale'],
+	    'index': 3
+    }
+]
+
+// Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+  console.log('recipe loaded');
+
+  // compile the template
+  var source   = $("#recipe-template").html();
+  var template = Handlebars.compile(source);
+  var parentDiv = $("#templatedRecipe");
+ 
+  var html = template(recipePageData[0]);
+  parentDiv.append(html);
+
+  // Use the URLSearchParams API to make fake-database queries using a URL
+  // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+  var queryParams = new URLSearchParams(window.location.search);
+  var projectTitle = queryParams.get('project');
+  console.log('query for', projectTitle);
+
+  // to get this to work like in class, comment out the "STEP 1" parts
+  // above between BEGIN and END.
+  for (var i = 0; i < complexData.length; i++) {
+    var curData = complexData[i];
+    if (curData.title == projectTitle) {
+      var curHtml = template(curData);
+      parentDiv.append(curHtml);
+    }
+  }
 
 
-    
 });
 
 

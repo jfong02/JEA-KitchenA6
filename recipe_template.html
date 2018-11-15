@@ -30,9 +30,6 @@
 		<button id="closesidebar" class="openbtn" onclick="closeNav()" style="display:none">&times;</button>
 	</div>
 
-    <div id="recipetemplate">
-        <!-- PUT THE TEMPLATE HERE -->
-    </div>
 	<!-- <center>
 	<img src="./images/Chicken-Kale-Detox-Soup.jpg"/>
 		<p> <b> <font size="+3">Chicken Kale Soup</font></b>
@@ -53,89 +50,79 @@
 <a href="./cranberry_kale_salad_recipe.html">
 <img border="0" alt="Kale Image" src="images/Cranberry-Kale-Salad.jpg" width="300" height="300"> </a> -->
 
-<script>
-	function store() {
-		var favorite = localStorage.getItem('allrecipes').recipes[1];
-		localStorage.setItem('favoritedrecipes',JSON.stringify(favorite));
-	}
 
-	function remove() {
-		// localStorage.removeItem('favoritedrecipes');
-	}
-</script>
-
-<script id="recipedetails" type="text/x-handlebars-template">
-    <center>
-        <img src="./images/Chicken-Kale-Detox-Soup.jpg"/>
-        <p> <b> <font size="+3">{{name}}</font></b>
-        <button id="addin" class="add-ingredient button kitchen-button" onclick="toggleadd(); store();">Add to Favorites!</button>
-        <button id="addout" class="add-ingredient button kitchen-button" onclick="toggleadd(); remove();" style="display:none">Added! *</button>
-    </center>
-    <div class="container">
-        <div class="row">
-            <p><b>Ingredients</b></p>
-        </div>
-        <div class="row">
-            <p>{{ingredients}}</p>
-        </div>
-        <div class="row">
-            <p><b>Steps</b></p>
-        </div>
-        <div class="row" id="steps">
-            <p>{{steps}}</p>
-        </div>
-        <div class="row">
-            <p><b>Related Recipes</b></p>
-        </div>
-        <div class="row">
-            <p>{{related}}</p>
-        </div>
-        <div class="row">
-            <h2><b>Comments</b></h2>
-        </div>
-        <div class="row">
-            <div class="container">
-                <form action="/action_page.php">
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="fname">First Name</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="lname">Last Name</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                        </div>
-                    </div>
-                    <div class="row">
+    <script id="recipe-template" type="text/x-handlebars-template">
+        <center>
+            <img src="./images/Chicken-Kale-Detox-Soup.jpg"/>
+            <p> <b> <font size="+3">{{title}}</font></b>
+            <button id="addin" class="add-ingredient button kitchen-button" onclick="toggleadd(); store();">Add to Favorites!</button>
+            <button id="addout" class="add-ingredient button kitchen-button" onclick="toggleadd(); remove();" style="display:none">Added! *</button>
+        </center>
+        <div class="container">
+            <div class="row">
+                <p><b>Ingredients</b></p>
+            </div>
+            <div class="row">
+                <p>{{ingredients}}</p>
+            </div>
+            <div class="row">
+                <p><b>Steps</b></p>
+            </div>
+            <div class="row" id="steps">
+                <p>{{steps}}</p>
+            </div>
+            <div class="row">
+                <p><b>Related Recipes</b></p>
+            </div>
+            <div class="row">
+                <a href="{{relatedRecipes}}">{{relatedTitle}}</a>
+            </div>
+            <div class="row">
+                <h2><b>Comments</b></h2>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <form action="/action_page.php">
                         <div class="row">
                             <div class="col-25">
-                                <label for="subject">Subject</label>
+                                <label for="fname">First Name</label>
                             </div>
                             <div class="col-75">
-                                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                                <input type="text" id="fname" name="firstname" placeholder="Your name..">
                             </div>
                         </div>
                         <div class="row">
-                            <input type="submit" value="Submit">
+                            <div class="col-25">
+                                <label for="lname">Last Name</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                            </div>
                         </div>
-                    </div>
-                </form>
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="subject">Subject</label>
+                                </div>
+                                <div class="col-75">
+                                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
+            
         </div>
-        
+    </script>
+    <div id="templatedRecipe">
+          <!-- we will inject templated project HTML code into here -->
     </div>
-</script>
-   
 
-
+    <!-- Handlebars -->
+    <script src="./js/handlebars-v4.0.11.js"></script>
 </body>
 </html>
-
-<!-- Handlebars -->
-<script src="./js/handlebars-v4.0.11.js"></script>
