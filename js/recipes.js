@@ -23,11 +23,11 @@ function closeNav() {
 
 // RECIPE STORAGE TO LOCALSTORAGE
 var recipes = [
-    {'name': 'Chicken and Kale Soup','index': '1', 'href':'./recipe_template.html?recipe=Chicken and Kale Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
-    {'name': 'Cranberry Kale Salad','index': '2', 'href':'./recipe_template.html?recipe=Cranberry Kale Salad','img':'./images/Cranberry-Kale-Salad.jpg'},
-    {'name': 'Chinese Style Kale','index': '3', 'href':'./recipe_template.html?recipe=Chinese Style Kale','img':'./images/Chinese-Style-Kale.jpg'},
-    {'name': 'Kale Chips','index': '4', 'href':'./recipe_template.html?recipe=Kale Chips','img':'./images/kale-chips.jpg'},
-    {'name': 'Kale Pesto','index': '5', 'href':'./recipe_template.html?recipe=Kale Pesto','img':'./images/kale-pesto.jpg'},
+    {'name': 'Chicken and Kale Soup','index': '1', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
+    {'name': 'Cranberry Kale Salad','index': '2', 'href':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad','img':'./images/Cranberry-Kale-Salad.jpg'},
+    {'name': 'Chinese Style Kale','index': '3', 'href':'./recipe_template.html?recipe=Chinese%20Style%20Kale','img':'./images/Chinese-Style-Kale.jpg'},
+    {'name': 'Kale Chips','index': '4', 'href':'./recipe_template.html?recipe=Kale%20Chips','img':'./images/kale-chips.jpg'},
+    {'name': 'Kale Pesto','index': '5', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'},
 ]
 
 localStorage.setItem('allrecipes',JSON.stringify(recipes));
