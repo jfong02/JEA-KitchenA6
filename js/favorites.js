@@ -1,6 +1,22 @@
 $(document).ready(function() {
 
-
+    var fav = JSON.parse(localStorage.getItem('favoritedrecipes'));
+    if (fav) {
+        var source = document.getElementById("favoritetemplate").innerHTML;
+        var template = Handlebars.compile(source);
+        var parent = $("#templatedfavorites");
+    
+        for (var i = 0; i<fav.length; i++) {
+            var curdata = fav[i];
+            console.log(fav[i]);
+            var curhtml = template(curdata);
+            parent.append(curhtml);
+        }
+    }
+    else {
+        emptymessage();
+        console.log('hide empty message');
+    }
     
 });
 
@@ -42,20 +58,3 @@ var dummy = {'name': 'Recipe Name','index': '#'}
 //     var curhtml = template(curdata);
 //     parent.append(curhtml);
 // }
-var fav = JSON.parse(localStorage.getItem('favoritedrecipes'));
-if (fav) {
-    var source = document.getElementById("favoritetemplate").innerHTML;
-    var template = Handlebars.compile(source);
-    var parent = $("#templatedfavorites");
-
-    for (var i = 0; i<fav.length; i++) {
-        var curdata = fav[i];
-        console.log(fav[i]);
-        var curhtml = template(curdata);
-        parent.append(curhtml);
-    }
-}
-else {
-    emptymessage();
-    console.log('hide empty message');
-}
