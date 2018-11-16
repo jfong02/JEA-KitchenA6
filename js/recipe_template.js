@@ -206,7 +206,15 @@ $(document).ready(function() {
             closeNav();
         }
     }
- 
+
+	var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+	var kitchenitems = [];
+	if (localitemref != null) {
+		for (i=0; i < localitemref.length; i++) {
+			kitchenitems.push(localitemref[i].inv);
+		}
+	}
+	console.log(kitchenitems);
 
 });
 
@@ -276,3 +284,5 @@ function closeNav() {
 	    $("#addin").toggle();
 	    $("#addout").toggle().css("background", "#a6d31d");
 	}
+
+	

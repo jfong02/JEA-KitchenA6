@@ -58,11 +58,11 @@ function emptymessage() {
     $('#emptymessage').toggle();
 }
 
-var favorited = [
-    {'name': 'chicken_kale_soup_recipe','index': '1'},
-    {'name': 'cranberry_kale_salad_recipe','index': '2'}
-]
-var dummy = {'name': 'Recipe Name','index': '#'}
+// var favorited = [
+//     {'name': 'chicken_kale_soup_recipe','index': '1'},
+//     {'name': 'cranberry_kale_salad_recipe','index': '2'}
+// ]
+// var dummy = {'name': 'Recipe Name','index': '#'}
 
 // LEARNING TEMPLATE
 // var source = $("#recipetemplate").html();
