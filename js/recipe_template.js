@@ -119,6 +119,20 @@ $(document).ready(function() {
     }
   }
 
+//   check if favorites button is supposed to be addin or addout
+	var checkfav = JSON.parse(localStorage.getItem('favoritedrecipes'));
+	var recipeTitle = queryParams.get('recipe');
+	if (checkfav) {
+		for (i=0; i < checkfav.length; i++) {
+			if (checkfav[i].name == recipeTitle) {
+				$('#addin').hide();
+				$('#addout').show();
+				console.log('its favorited');
+				break;
+			}
+		}
+	}
+
 
 });
 
@@ -139,7 +153,6 @@ function closeNav() {
     $("#closesidebar").hide();
 }
 
-	// put these functions and scripts into recipe_template.js to have favoriting functionality
 	function store() {
 		var allrecipes = JSON.parse(localStorage.getItem("allrecipes"));
 		var favoritestuff = JSON.parse(localStorage.getItem('favoritedrecipes'));
@@ -182,18 +195,6 @@ function closeNav() {
 			newfav = null;
 		console.log(newfav);
         localStorage.setItem('favoritedrecipes',JSON.stringify(newfav));
-	}
-
-	var checkfav = JSON.parse(localStorage.getItem('favoritedrecipes'));
-	if (checkfav) {
-		$('#addin').show();
-		$('#addout').hide();
-		for (i=0; i < checkfav.length; i++) {
-			if (checkfav[i].name =='Chicken and Kale Soup') {
-				$('#addin').hide();
-				$('#addout').show();
-			}
-		}
 	}
 
 	function toggleadd() {
