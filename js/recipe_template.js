@@ -159,7 +159,7 @@ var recipePageData = [
     }
 ]
 
-
+var queryParams = new URLSearchParams(window.location.search);
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	$('#loading-icon').hide();
@@ -173,7 +173,6 @@ $(document).ready(function() {
 
   // Use the URLSearchParams API to make fake-database queries using a URL
   // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
-  var queryParams = new URLSearchParams(window.location.search);
   var recipeTitle = queryParams.get('recipe');
   console.log('query for', recipeTitle);
 
@@ -269,10 +268,11 @@ function closeNav() {
         console.log(newfav);
 
 		var recipeTitle = queryParams.get('recipe');
+		console.log(recipeTitle);
 		if (allrecipes) {
             for (i=0; i < allrecipes.length; i++) {
 				if (allrecipes[i].name==recipeTitle) {
-					var push=allrecipes[0];
+					var push=allrecipes[i];
 					newfav.push(push);
 					console.log('found matching recipe to favorite');
 				}
