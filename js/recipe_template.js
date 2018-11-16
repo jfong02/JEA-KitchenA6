@@ -171,13 +171,20 @@ $(document).ready(function() {
   var recipeTitle = queryParams.get('recipe');
   console.log('query for', recipeTitle);
 
+  var ingList = undefined;
+  var matchedItems = [];
 
   for (var i = 0; i < recipePageData.length; i++) {
     var curData = recipePageData[i];
     if (curData.title == recipeTitle) {
 	    var curHtml = template(curData);
 	    parentDiv.append(curHtml);
+	    ingList = curData.ingredients;
     }
+  }
+  for ( var i = 0; i < ingList.length; i++ ) {
+  	var currIng = ingList[i];
+  	if( )
   }
 
 //   check if favorites button is supposed to be addin or addout
