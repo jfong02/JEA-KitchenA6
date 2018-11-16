@@ -50,7 +50,7 @@
         <div class="row">
             <ul>
                 {{#each ingredients as |item| }}
-                     <li>{{item}}</li>
+                    <li>{{item}}</li>
                 {{/each}}
             </ul>
         </div>
@@ -116,6 +116,8 @@
         </div>
 
     </div>
+
+
 </script>
 
 <div id="templatedRecipe">
@@ -129,3 +131,33 @@
 
 </body>
 </html>
+<!-- 
+    {{#each ingredients as |item| }}
+        {{#each ../instock as |yes| }}
+            {{#if yes}}
+                <li {{yes}}>{{item}}</li>
+            {{else}}
+                <li>{{item}}</li>
+            {{/if}}
+        {{/each}}
+        <li>{{item}}</li>
+    {{/each}} -->
+
+<script>
+    // Handlebars.registerHelper('equal', function(lvalue, options) {
+    //     if (arguments.length < 2)
+    //         throw new Error("Handlebars Helper equal needs 2 parameters");
+    //     if( lvalue!=true ) {
+    //         return options.inverse(this);
+    //     } else {
+    //         return options.fn(this);
+    //     }
+    // });
+    Handlebars.registerHelper('getingandbool', function() {
+        var ingredient = Handlebars.escapeExpression(this)
+
+        return new Handlebars.SafeString(
+            "<li>" + ingredient + " " + "</li>"
+    );
+    });
+</script>

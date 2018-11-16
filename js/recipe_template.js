@@ -23,7 +23,7 @@ var recipePageData = [
 	                   '1/2 teaspoon ground pepper',
 	                   '1 tablespoon parsley, roughly chopped'
 	                  ],
-	    'boolean': [],
+	    'instock': [],
 
 		'steps': ['In a large pot over medium-low heat, heat oil.',
 				  'Add in onion and garlic and pan fry for one minute.',
@@ -56,7 +56,8 @@ var recipePageData = [
 	                   '2 tablespoons lemon juice',
 	                   '3/4 teaspoon fine-grain sea salt',
 	                   '3/4 teaspoon ground pepper',
-	                  ],
+					  ],
+		'instock': [],
 		'steps': ['Make the pesto: In a food processor, add the peeled garlic cloves and process until the garlic is minced. Add the kale, hemp seeds, lemon juice, salt and pepper. Turn on the food processor and drizzle in the oil. Process until the pesto reaches your desired consistency, stopping to scrape down the sides as necessary. Taste and add more lemon, salt or pepper if necessary. (You can thin out the pesto with more oil, but if you’re serving with pasta, keep in mind that you can also thin it out with reserved pasta cooking water.)',
 				  'Cook the pasta (optional): Bring a large pot of salted water to boil. Add the pasta and cook until al dente, according to package directions. Reserve one cup cooking liquid before draining the pasta. Let the pasta and pasta water cool for a minute to make sure the high heat doesn’t damage the flax oil pesto.',
 				  'If you intend to have leftovers, transfer the amount of pasta you think you’ll be eating immediately to a serving bowl and mix in pesto with splashes of cooking water. Otherwise, you can mix the pasta and pesto together in your cooking pot, adding splashes of cooking water as necessary. Keep in mind that you have diluted the flavor a bit with the cooking water, so taste and add more lemon, salt or a drizzle of olive oil as necessary.'
@@ -81,7 +82,8 @@ var recipePageData = [
 	                   '200g bag kale',
 	                   '1 tbsp soy sauce',
 	                   '1 tbsp oyster sauce'
-	                  ],
+					  ],
+		'instock': [],
 		'steps': ['Heat the oil in a large wok or frying pan, then tip in the garlic and cook for a few secs. Throw in the kale and toss around the pan to coat in the garlicky oil.',
 				  'Pour over 100ml boiling water and cook for 7 mins more until the kale has wilted and is cooked through.',
 				  'Stir in the soy and oyster sauces and heat through to serve.'
@@ -114,6 +116,7 @@ var recipePageData = [
 				  'cup sliced almonds',
 				  '1/4 cup crumbled blue cheese or goat cheese'
 				 ],
+		'instock': [],
 	   'steps': ['Heat 2 Tbsp. oil in a large saute pan over medium-high heat. Add shallot and saute for at least 5 minutes or until tender. Add garlic and saute for 1 minute. Then add cranberries, red wine vinegar, honey and lemon juice and zest, and stir to combine. Season with salt and pepper.',
 	             'With a knife or kitchen shears carefully remove the leaves from the thick stems and tear into bite size pieces. Wash and thoroughly dry kale with a salad spinner. Drizzle kale with olive oil and sprinkle with seasoning salt.'
 	                  ],
@@ -135,7 +138,8 @@ var recipePageData = [
 	   'ingredients': ['1 tbsp olive oil',
 	                   '1 tsp seasoned salt',
 	                   '200g bag kale'
-	                  ],
+					  ],
+		'instock': [],
 		'steps': ['Preheat an oven to 350 degrees F (175 degrees C). Line a non insulated cookie sheet with parchment paper.',
 				  'With a knife or kitchen shears carefully remove the leaves from the thick stems and tear into bite size pieces. Wash and thoroughly dry kale with a salad spinner. Drizzle kale with olive oil and sprinkle with seasoning salt.',
 				  'Bake until the edges brown but are not burnt, 10 to 15 minutes.'
@@ -185,28 +189,34 @@ $(document).ready(function() {
 /*** ****************************** ***/
 
   var ingList = undefined;
-  var matchedItems = [];
+  var curData = undefined;
+  var recipenum = 0;
 
   for (var i = 0; i < recipePageData.length; i++) {
-    var curData = recipePageData[i];
+    curData = recipePageData[i];
     if (curData.title == recipeTitle) {
-	    var curHtml = template(curData);
-	    parentDiv.append(curHtml);
+		recipenum = i;
 	    ingList = curData.ingredients;
 	    for( var j = 0; j < ingList.length; j++ ) {
-	    	(curData.boolean).push(false);
-	    }
+	    	(curData.instock).push(null);
+		}
+		for ( var i = 0; i < ingList.length; i++ ) {
+			var currIng = ingList[i];
+			curData = recipePageData[recipenum];
+			for( var j = 0; j < kitchenitems.length; j++ ) {
+				if( (currIng.toLowerCase()).includes(kitchenitems[j].toLowerCase()) ) {
+					(curData.instock[i]) = "style=\"color:#bbb;\"";
+				}
+			}
+		}
+		var curHtml = template(curData);
+		parentDiv.append(curHtml);
+		break;
     }
   }
+	console.log(curData.instock);
+	console.log(curData);
 
-  for ( var i = 0; i < ingList.length; i++ ) {
-  	var currIng = ingList[i];
-  	for( var j = 0; j < kitchenitems.length; j++ ) {
-  		if( (currIng.toLowerCase()).includes(kitchenitems[j].toLowerCase()) ) {
-  			boolean[i] = true;
-  		}
-  	}
-  }
 
 //   check if favorites button is supposed to be addin or addout
 	var checkfav = JSON.parse(localStorage.getItem('favoritedrecipes'));
@@ -229,8 +239,6 @@ $(document).ready(function() {
     }
 
 });
-
-
 
 // * Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
@@ -262,7 +270,7 @@ function closeNav() {
 
 		if (allrecipes) {
             for (i=0; i < allrecipes.length; i++) {
-				if (allrecipes[i].name=='Chicken and Kale Soup') {
+				if (allrecipes[i].name==recipeTitle) {
 					var push=allrecipes[0];
 					newfav.push(push);
 					console.log('found matching recipe to favorite');
@@ -297,4 +305,3 @@ function closeNav() {
 	    $("#addout").toggle().css("background", "#a6d31d");
 	}
 
-	
