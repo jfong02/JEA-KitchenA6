@@ -17,7 +17,10 @@
 
 </head>
 <body>
-
+	<center>
+		<i id="loading-icon" class="fa fa-5x fa-hourglass-half sr-icons" style="margin:40%; border: 40%;"></i>
+	</center>
+	
 	<!-- Navbar -->
 	<div id="mainnav" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -69,7 +72,7 @@
 	</script>
 
 	<script id="ingredientstemplate" type="text/x-handlebars-template">
-	<div class="col-2" id="ingredient{{index}}">
+	<div class="col-2 ingredient-item">
 		<p class="recipe-ingredient text-center" href="./kitchen.html" style="margin:5px; ">{{inv}}</p>
 	</div>
 	</script>
