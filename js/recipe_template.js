@@ -2,7 +2,7 @@ var recipePageData = [
  	{  'title': 'Chicken and Kale Soup',
  	   'image':'./images/Chicken-Kale-Detox-Soup.jpg',
 	   'ingredients': ['1 tablespoon extra virgin olive oil',
-                     '1 large white onion, diced',
+                       '1 large white onion, diced',
 	                   '4 cloves garlic, crushed',
 	                   '2 medium carrots, diced',
 	                   '2 stalks celery, diced',
@@ -27,12 +27,12 @@ var recipePageData = [
 		'relatedTitle': ['Kale Pesto',
 		                 'Chinese Style Kale',
 		                 'Cranberry Kale Salad'],
-    'relatedIMG1':'./images/kale-pesto.jpg',
-    'relatedIMG2':'./images/Chinese-Style-Kale.jpg',
-    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
-    'relatedREF1':'./recipe_template.html?recipe=Kale%20Pesto',
-    'relatedREF2':'./recipe_template.html?recipe=Chinese%20Style%20Kale',
-    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
+		    'relatedIMG1':'./images/kale-pesto.jpg',
+		    'relatedIMG2':'./images/Chinese-Style-Kale.jpg',
+		    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
+		    'relatedREF1':'./recipe_template.html?recipe=Kale%20Pesto',
+		    'relatedREF2':'./recipe_template.html?recipe=Chinese%20Style%20Kale',
+		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
 
 	    'index': 0
     },
@@ -54,12 +54,12 @@ var recipePageData = [
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Chinese Style Kale',
 		                 'Cranberry Kale Salad'],
-    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
-    'relatedIMG2':'./images/Chinese-Style-Kale.jpg',
-    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
-    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
-    'relatedREF2':'./recipe_template.html?recipe=Chinese%20Style%20Kale',
-    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
+		    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+		    'relatedIMG2':'./images/Chinese-Style-Kale.jpg',
+		    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
+		    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
+		    'relatedREF2':'./recipe_template.html?recipe=Chinese%20Style%20Kale',
+		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
 	    'index': 1
     },
  	{'title': 'Chinese Style Kale',
@@ -79,12 +79,12 @@ var recipePageData = [
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Cranberry Kale Salad'],
-    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
-    'relatedIMG2':'./images/kale-pesto.jpg',
-    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
-    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
-    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
-    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
+		    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+		    'relatedIMG2':'./images/kale-pesto.jpg',
+		    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
+		    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
+		    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
+		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
 	    'index': 2
     },
  	{'title': 'Cranberry Kale Salad',
@@ -110,12 +110,12 @@ var recipePageData = [
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Chinese Style Kale'],
-    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
-    'relatedIMG2':'./images/kale-pesto.jpg',
-    'relatedIMG3':'./images/Chinese-Style-Kale.jpg',
-    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
-    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
-    'relatedREF3':'./recipe_template.html?recipe=Chinese%20Style%20Kale',
+		    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+		    'relatedIMG2':'./images/kale-pesto.jpg',
+		    'relatedIMG3':'./images/Chinese-Style-Kale.jpg',
+		    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
+		    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
+		    'relatedREF3':'./recipe_template.html?recipe=Chinese%20Style%20Kale',
 	    'index': 3
     },
  	{'title': 'Kale Chips',
@@ -133,12 +133,12 @@ var recipePageData = [
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Cranberry Kale Salad'],
-    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
-    'relatedIMG2':'./images/kale-pesto.jpg',
-    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
-    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
-    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
-    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
+		    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+		    'relatedIMG2':'./images/kale-pesto.jpg',
+		    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
+		    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
+		    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
+		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
 	    'index': 4
     }
 ]
@@ -163,8 +163,8 @@ $(document).ready(function() {
   for (var i = 0; i < recipePageData.length; i++) {
     var curData = recipePageData[i];
     if (curData.title == recipeTitle) {
-      var curHtml = template(curData);
-      parentDiv.append(curHtml);
+	    var curHtml = template(curData);
+	    parentDiv.append(curHtml);
     }
   }
 
@@ -188,6 +188,7 @@ $(document).ready(function() {
             console.log('close nav');
         }
     }
+ 
 
 });
 
