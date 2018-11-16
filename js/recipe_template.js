@@ -50,9 +50,9 @@ var recipePageData = [
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Chinese Style Kale',
 		                 'Cranberry Kale Salad'],
-    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
-    'relatedIMG2':'./images/Chinese-Style-Kale.jpg',
-    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
+    		'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+    		'relatedIMG2':'./images/Chinese-Style-Kale.jpg',
+    		'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
 	    'index': 1
     },
  	{'title': 'Chinese Style Kale',
@@ -72,9 +72,9 @@ var recipePageData = [
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Cranberry Kale Salad'],
-    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
-    'relatedIMG2':'./images/kale-pesto.jpg',
-    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
+    		'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+    		'relatedIMG2':'./images/kale-pesto.jpg',
+	    	'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
 	    'index': 2
     },
  	{'title': 'Cranberry Kale Salad',
@@ -100,9 +100,9 @@ var recipePageData = [
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Chinese Style Kale'],
-    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
-    'relatedIMG2':'./images/kale-pesto.jpg',
-    'relatedIMG3':'./images/Chinese-Style-Kale.jpg',
+    		'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+    		'relatedIMG2':'./images/kale-pesto.jpg',
+    		'relatedIMG3':'./images/Chinese-Style-Kale.jpg',
 	    'index': 3
     },
  	{'title': 'Kale Chips',
@@ -120,9 +120,9 @@ var recipePageData = [
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Cranberry Kale Salad'],
-    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
-    'relatedIMG2':'./images/kale-pesto.jpg',
-    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
+    		'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+    		'relatedIMG2':'./images/kale-pesto.jpg',
+    		'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
 	    'index': 4
     }
 ]
