@@ -23,6 +23,8 @@ var recipePageData = [
 	                   '1/2 teaspoon ground pepper',
 	                   '1 tablespoon parsley, roughly chopped'
 	                  ],
+	    'boolean': [],
+
 		'steps': ['In a large pot over medium-low heat, heat oil.',
 				  'Add in onion and garlic and pan fry for one minute.',
 				  'Add in carrots and celery. pan fry for five minutes, until onion is translucent.',
@@ -171,6 +173,17 @@ $(document).ready(function() {
   var recipeTitle = queryParams.get('recipe');
   console.log('query for', recipeTitle);
 
+/******** ACCESSING KITCHEN ITEMS ********/
+  	var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+	var kitchenitems = [];
+	if (localitemref != null) {
+		for (i=0; i < localitemref.length; i++) {
+			kitchenitems.push(localitemref[i].inv);
+		}
+	}
+	console.log(kitchenitems);
+/*** ****************************** ***/
+
   var ingList = undefined;
   var matchedItems = [];
 
@@ -180,11 +193,19 @@ $(document).ready(function() {
 	    var curHtml = template(curData);
 	    parentDiv.append(curHtml);
 	    ingList = curData.ingredients;
+	    for( var j = 0; j < ingList.length; j++ ) {
+	    	(curData.boolean).push(false);
+	    }
     }
   }
+
   for ( var i = 0; i < ingList.length; i++ ) {
   	var currIng = ingList[i];
-  	if( )
+  	for( var j = 0; j < kitchenitems.length; j++ ) {
+  		if( (currIng.toLowerCase()).includes(kitchenitems[j].toLowerCase()) ) {
+  			boolean[i] = true;
+  		}
+  	}
   }
 
 //   check if favorites button is supposed to be addin or addout
@@ -206,15 +227,6 @@ $(document).ready(function() {
             closeNav();
         }
     }
-
-	var localitemref = JSON.parse(localStorage.getItem("kitchen"));
-	var kitchenitems = [];
-	if (localitemref != null) {
-		for (i=0; i < localitemref.length; i++) {
-			kitchenitems.push(localitemref[i].inv);
-		}
-	}
-	console.log(kitchenitems);
 
 });
 
