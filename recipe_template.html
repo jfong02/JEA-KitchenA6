@@ -48,13 +48,13 @@
             <p><b>Ingredients</b></p>
         </div>
         <div class="row">
-            <p>{{ingredients}}</p>
+            <ul>{{#each ingredients as |item| }}<li>{{item}}</li>{{/each}}</ul>
         </div>
         <div class="row">
             <p><b>Steps</b></p>
         </div>
-        <div class="row" id="steps">
-            <p>{{steps}}</p>
+        <div class="row">
+            <ol>{{#each steps as |direction| }}<li>{{direction}}</li>{{/each}}</ol>
         </div>
         <div class="row">
             <p><b>Related Recipes</b></p>
@@ -73,7 +73,7 @@
         </div>
         <div class="row">
             <div class="container">
-                <form action="">
+                <form action="" target="_blank">
                     <div class="row">
                         <div class="col-25">
                             <label for="fname">First Name</label>
