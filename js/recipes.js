@@ -18,6 +18,33 @@ $(document).ready(function() {
         }
     }
 
+    var ingredsource = document.getElementById("ingredientstemplate").innerHTML;
+    var ingredtemplate = Handlebars.compile(ingredsource);
+    var ingredientslist = $("#ingredientslist");
+    var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+    if (localitemref) {
+        for (var i = 0; i<localitemref.length; i++) {
+            var ingredients = localitemref[i];
+            var stuff = ingredtemplate(ingredients);
+            ingredientslist.append(stuff);
+        }
+    }
+    console.log(ingredientslist);
+
+    localStorage.setItem('allrecipes',JSON.stringify(recipes));
+    var source = document.getElementById("recipetemplate").innerHTML;
+    var template = Handlebars.compile(source);
+    var parent = $("#recipedeposit");
+    if (localitemref) {
+        for (var i = 0; i<recipes.length; i++) {
+            var curdata = recipes[i];
+            var curhtml = template(curdata);
+            parent.append(curhtml);
+        }
+    }
+    else
+        $('#empty-message').show();
+
 });
 
 
@@ -45,30 +72,6 @@ var recipes = [
     {'name': 'Kale Chips','index': '4', 'href':'./recipe_template.html?recipe=Kale%20Chips','img':'./images/kale-chips.jpg'},
     {'name': 'Kale Pesto','index': '5', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'},
 ]
-
-localStorage.setItem('allrecipes',JSON.stringify(recipes));
-var source = document.getElementById("recipetemplate").innerHTML;
-var template = Handlebars.compile(source);
-var parent = $("#recipedeposit");
-
-for (var i = 0; i<recipes.length; i++) {
-    var curdata = recipes[i];
-    var curhtml = template(curdata);
-    parent.append(curhtml);
-}
-
-var ingredsource = document.getElementById("ingredientstemplate").innerHTML;
-var ingredtemplate = Handlebars.compile(ingredsource);
-var ingredientslist = $("#ingredientslist");
-var localitemref = JSON.parse(localStorage.getItem("kitchen"));
-if (localitemref) {
-    for (var i = 0; i<localitemref.length; i++) {
-        var ingredients = localitemref[i];
-        var stuff = ingredtemplate(ingredients);
-        ingredientslist.append(stuff);
-    }
-}
-
 
 $('#ingredientslist').click(function() {
     window.location = "./kitchen.html"; // Go to kitchen page

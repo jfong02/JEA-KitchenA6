@@ -55,8 +55,15 @@ function closeNav() {
 }
 
 function emptymessage() {
-    $('#emptymessage').toggle();
+    $('#empty-message').toggle();
 }
+
+$('#clear-favorites').click(function() {
+    $('#templatedfavorites').empty();
+    $('#emptymessage').show();
+    localStorage.removeItem("favoritedrecipes");
+  });
+
 
 // var favorited = [
 //     {'name': 'chicken_kale_soup_recipe','index': '1'},

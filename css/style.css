@@ -302,4 +302,14 @@ header.masthead p {
 	border-radius: 20px;
 }
 
+/* FAVORITES */
+
+#clear-favorites {
+	background-color: orangered;
+	border-color: orangered;
+	border: 2px solid;
+	border-radius: 20px;
+	margin: 20px;
+}
+
 
