@@ -268,6 +268,7 @@ function closeNav() {
         }
         console.log(newfav);
 
+		var recipeTitle = queryParams.get('recipe');
 		if (allrecipes) {
             for (i=0; i < allrecipes.length; i++) {
 				if (allrecipes[i].name==recipeTitle) {
