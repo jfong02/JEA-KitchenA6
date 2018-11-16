@@ -231,5 +231,5 @@ function closeNav() {
 
 	function toggleadd() {
 	    $("#addin").toggle();
-	    $("#addout").toggle();
+	    $("#addout").toggle().css("background", "#a6d31d");
 	}
