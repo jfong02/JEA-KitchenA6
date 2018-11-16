@@ -17,6 +17,12 @@ $(document).ready( function() {
       console.log("Figure out how to change active class");
     });
 
+    window.onclick = function(event) {
+        if (event.target != document.getElementById('mainnav') && event.target !=document.getElementById('opensidebar') && event.target !=document.getElementById('closesidebar')) {
+            closeNav();
+            console.log('close nav');
+        }
+    }
 
     $('li button').click(function() {
         $('#empty-message').hide();
@@ -101,7 +107,7 @@ $(document).ready( function() {
         $('#empty-message').show();
     }
 
-    
+
     $('ul#kitchen-panel-list').on("click",'.item-button',function() {
         console.log("click delete!");
         var localitemref = JSON.parse(localStorage.getItem("kitchen"));

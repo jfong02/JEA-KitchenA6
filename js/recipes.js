@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
-
+    window.onclick = function(event) {
+        if (event.target != document.getElementById('mainnav') && event.target !=document.getElementById('opensidebar') && event.target !=document.getElementById('closesidebar')) {
+            closeNav();
+            console.log('close nav');
+        }
+    }
 
 });
 

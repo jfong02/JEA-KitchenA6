@@ -8,6 +8,13 @@ $(document).ready(function() {
           return this.href == url;
     }).parent().addClass('active');
 
+    window.onclick = function(event) {
+        if (event.target != document.getElementById('mainnav') && event.target !=document.getElementById('opensidebar') && event.target !=document.getElementById('closesidebar')) {
+            closeNav();
+            console.log('close nav');
+        }
+    }
+
     
 });
 
