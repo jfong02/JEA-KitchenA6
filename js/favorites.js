@@ -1,4 +1,16 @@
+// Calls this while document not ready
+var ready = false;
+if (!ready) {
+	loading();
+}
+function loading() {
+	console.log('loading...');
+	$('#loading-icon').show();
+}
+
 $(document).ready(function() {
+    $('#loading-icon').hide();
+	ready = true;
 
     var fav = JSON.parse(localStorage.getItem('favoritedrecipes'));
     if (fav) {
@@ -21,7 +33,6 @@ $(document).ready(function() {
     window.onclick = function(event) {
         if (event.target != document.getElementById('mainnav') && event.target !=document.getElementById('opensidebar') && event.target !=document.getElementById('closesidebar')) {
             closeNav();
-            console.log('close nav');
         }
     }
 });

@@ -1,3 +1,13 @@
+// Calls this while document not ready
+var ready = false;
+if (!ready) {
+	loading();
+}
+function loading() {
+	console.log('loading...');
+	$('#loading-icon').show();
+}
+
 var recipePageData = [
  	{  'title': 'Chicken and Kale Soup',
  	   'image':'./images/Chicken-Kale-Detox-Soup.jpg',
@@ -146,6 +156,8 @@ var recipePageData = [
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+	$('#loading-icon').hide();
+	ready = true;
   console.log('recipe loaded');
 
   // compile the template
@@ -185,11 +197,11 @@ $(document).ready(function() {
 	window.onclick = function(event) {
         if (event.target != document.getElementById('mainnav') && event.target !=document.getElementById('opensidebar') && event.target !=document.getElementById('closesidebar')) {
             closeNav();
-            console.log('close nav');
         }
     }
 
 });
+
 
 
 // * Set the width of the sidebar to 250px and the left margin of the page content to 250px */

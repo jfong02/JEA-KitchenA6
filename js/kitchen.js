@@ -1,5 +1,18 @@
 // var kitchenURL = new URLSearchParams(window.location.search);
+/// Calls this while document not ready
+var ready = false;
+if (!ready) {
+	loading();
+}
+function loading() {
+	console.log('loading...');
+	$('#loading-icon').show();
+}
+
 $(document).ready( function() {
+    $('#loading-icon').hide();
+    ready = true;
+    
     $("#panel").hide(0);
     $("#addin").click(function(){
     	$("#panel").show(500);
@@ -20,7 +33,6 @@ $(document).ready( function() {
     window.onclick = function(event) {
         if (event.target != document.getElementById('mainnav') && event.target !=document.getElementById('opensidebar') && event.target !=document.getElementById('closesidebar')) {
             closeNav();
-            console.log('close nav');
         }
     }
 
@@ -75,7 +87,7 @@ $(document).ready( function() {
         
         newingredientname = $(this).text();
         console.log($(this).text());
-        var push={'inv': newingredientname,'index': kitchenobject.length};
+        var push={'inv': newingredientname};
         kitchenobject.push(push);
         console.log(push);
         
@@ -91,8 +103,6 @@ $(document).ready( function() {
     if (localitems != null) {
         for (i=0; i < localitems.length; i++) {
             kitchenobjects.push(localitems[i]);
-            console.log('kitchenobjects:');
-            console.log(kitchenobjects);
         }
         console.log(kitchenobjects);
         $('#empty-message').hide();
@@ -111,28 +121,33 @@ $(document).ready( function() {
     $('ul#kitchen-panel-list').on("click",'.item-button',function() {
         console.log("click delete!");
         var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+        var kitchenobjects = [];
         if (localitemref != null) {
             for (i=0; i < localitemref.length; i++) {
-                if (localitemref[i].name != $(this).text())
+                kitchenobjects.push(localitemref[i]);
+            }
+            for (i=0; i < kitchenobjects.length; i++) {
+                console.log(kitchenobjects[i]);
+                if (kitchenobjects[i].inv == $(this).text())
                 {
-                    localitemref.splice(i,1);
+                    kitchenobjects.splice(i,1);
                     break;
                 }
             }
         }
-        console.log(localitemref);
-        console.log($(this));
+        console.log($(this).text());
         
         // remove button from kitchen
         $(this).hide();
 
-        if (localitemref.length <1) {
-            localitemref = null;
+        if (kitchenobjects.length <1) {
+            kitchenobjects = null;
             $('#empty-message').show();
         }
             
         // push data to local storage
-        localStorage.setItem('kitchen',JSON.stringify(localitemref));
+        console.log(kitchenobjects);
+        localStorage.setItem('kitchen',JSON.stringify(kitchenobjects));
 
     })
 
